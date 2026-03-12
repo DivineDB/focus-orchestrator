@@ -1,0 +1,26 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "shell-cmds",
+  "description": "Allows executing shell commands via cmd and powershell",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "shell:default",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "run-cmd",
+          "cmd": "cmd",
+          "args": true
+        },
+        {
+          "name": "run-powershell",
+          "cmd": "powershell",
+          "args": true
+        }
+      ]
+    }
+  ]
+}
