@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FOCUS ORCHESTRATOR
+SYSTEMS ONLINE // BRUTALIST OS WORKFLOW ORCHESTRATOR
 
-## Getting Started
+Focus Orchestrator is a high-performance desktop utility built with **Tauri v2**, **Next.js**, and **Rust**. It allows you to declare a work intent (e.g., "Prepare for trading session" or "Deep work on code") and orchestrates your OS workspace by launching the exact set of applications and URLs you need.
 
-First, run the development server:
+## 💀 BRUTALIST FEATURES
 
+- **ARSENAL MANAGEMENT**:
+  - **Auto-Scanned Apps**: Automatically crawls your Windows registry to find installed applications.
+  - **Custom Tools**: Add your own `.exe` paths or URLs directly to your personal arsenal.
+  - **Persistent Storage**: Custom tools are saved to local storage and persist between sessions.
+- **AI-POWERED INTENT**:
+  - Leverages **Gemini 2.0 Flash** to analyze your intent and select the optimal tools.
+  - **Spatial Orchestration**: Suggets window placements (Left, Right, Maximized) for a perfect tiling layout.
+- **BULLETPROOF LAUNCH**:
+  - Custom Rust backend for direct binary execution.
+  - Environment variable expansion (e.g., `%LOCALAPPDATA%`).
+  - Graceful fallback to Windows `cmd` for stubborn applications.
+- **BRUTALIST UI**: High-contrast, monospace terminal aesthetic designed for maximum focus.
+
+## 🛠️ INSTALLATION
+
+### 1. Prerequisites
+Ensure you have the following installed on your Windows system:
+- **Rust**: [rustup.rs](https://rustup.rs/)
+- **Node.js**: v18+ (LTS recommended)
+- **Tauri Prerequisites**: Follow the [Windows Setup Guide](https://v2.tauri.app/start/prerequisites/#windows) (C++ Build Tools, etc.).
+
+### 2. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/DivineDB/focus-orchestrator.git
+cd focus-orchestrator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Configuration
+Create a `.env` file in the root directory:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 DEVELOPMENT
 
-## Learn More
+To run the application in development mode with hot-reloading:
+```bash
+npm run tauri dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 BUILD
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To generate a production-ready Windows executable:
+```bash
+npm run tauri build
+```
+The resultinginstaller will be located in `src-tauri/target/release/bundle/msi/`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 STACK
+- **Frontend**: Next.js 15+, TypeScript, Vanilla CSS.
+- **Backend**: Rust, Tauri v2.
+- **AI**: Google Generative AI (Gemini).
+- **Design**: Brutalist Monospace.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Stay focused. Execute.*
